@@ -55,7 +55,7 @@ const ProductsforAdmin = () => {
     onOpen(true);
   };
 
-  if (products.length > 0) {
+  if (products.length >= 0) {
     return (
       <Box>
         <TableContainer p={3} >

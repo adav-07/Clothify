@@ -9,6 +9,7 @@ exports.Register = async (req, res) => {
             newUser
         });
     } catch (error) {
+        console.log(error);
         res.status(400).json({
             status: 'failed',
             error

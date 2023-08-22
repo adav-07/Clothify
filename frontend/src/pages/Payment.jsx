@@ -17,7 +17,7 @@ const Payment = () => {
 
     useEffect(() => {
 
-        fetch(`${process.env.REACT_APP_API_BASE_URL}/create-payment-intent`, {
+        fetch(`http://localhost:4000/create-payment-intent`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ price: state.price }),

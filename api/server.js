@@ -34,7 +34,9 @@ app.use('/orders', orderRoutes);
 app.use('/reports', reportRoutes);
 app.use('/images', imageRoutes);
 app.use('/minis', miniImageRoutes);
-
+app.get("/", (req,res)=>{
+    res.send("Hello world!");
+})
 
 // STRIPE CONNECTION
 app.post("/create-payment-intent", async (req, res) => {
@@ -53,9 +55,10 @@ app.post("/create-payment-intent", async (req, res) => {
     });
 });
 
-mongoose.connect(process.env.MONGODB_URL, () => {
+mongoose.connect("mongodb+srv://ecommerce:HKEEOgHAjnyI6nss@cluster0.ufam0lq.mongodb.net/?retryWrites=true&w=majority", () => {
     console.log('Successfully connected to database.');
 });
+// HKEEOgHAjnyI6nss
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}.`);
